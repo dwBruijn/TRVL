@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- import offline material-icons -->
+        <link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+        <!-- import fontawesome -->
+        <link type="text/css"rel="stylesheet" href="css/all.css"/>
+        <!-- CSS file for the search bar -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Italy Trips & Vacations</title>
+    </head>
+
+    <body>
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="index.html" class="brand-logo">TRVL</a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="#GALLERY">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="#ABOUT">About</a>
+                            </li>
+                            <li>
+                                <a href="#CONTACT">Contact</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-trigger" href="#" data-target="dropdown1">Destinations<i class="material-icons right">arrow_drop_down</i></a>
+                            </li>
+                            <li>
+                                <a href="Inquire.html" class="btn grey darken-4 waves-effect waves-dark" id="inquire-btn">INQUIRE</a>
+                            </li>
+                            <li>
+                                <a href="login.html">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <ul id='dropdown1' class='dropdown-content mega'>
+            <div class="row">
+                <div class="col m4">
+                    <li class="dest-group">Asia</li>
+                    <li class="divider"></li>
+                    <li><a href="Japan.html">Japan</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">India</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">China</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Russia</a></li>
+                </div>
+                <div class="col m4">
+                    <li class="dest-group">Europe</li>
+                    <li class="divider"></li>
+                    <li><a href="Italy.html">Italy</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Ireland</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">France</a></li>
+                </div>
+                <div class="col m4">
+                    <li class="dest-group">America</li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Canada</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Mexico</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Bahamas</a></li>
+                </div>
+            </div>
+         </ul>
+
+         <ul class="sidenav" id="mobile-nav">
+             <li>
+                 <a class="sidenav-close" href="index.html">Home</a>
+             </li>
+             <li>
+                 <a class="sidenav-close" href="#GALLERY">Gallery</a>
+             </li>
+             <li>
+                 <a class="sidenav-close" href="#ABOUT">About</a>
+             </li>
+             <li>
+                 <a class="sidenav-close" href="#CONTACT">Contact</a>
+             </li>
+         </ul>
+
+
+         <section class="banner">
+            <!-- responsive img based on screen size -->
+             <picture>
+                <source media="(max-width:767px)" srcset="img/ItalyBanner2.jpg">
+                <source media="(min-width:768px)" srcset="img/ItalyBanner1.jpg">
+                <!-- in case source isn't supported, this img tag will be loaded instead -->
+                <img src="img/ItalyBanner1.jpg" alt="Japan">
+            </picture>
+        </section>
+
+        <section class="section description grey lighten-5">
+            <div class="container">
+                <h3 class="center ">Italy Tours and Vacations</h3>
+                <p class="center">
+                    Italy tours offer the quintessential Italian vacation through exclusive access to the best experiences. Learn renowned culinary
+                    techniques in a genuine Italian kitchen, visit historical wineries on private tasting tours, and discover hidden traditions
+                    throughout the country. The seductiveness of Italy is brought to life with a handcrafted experience from TRVL.
+                </p>
+            </div>
+        </section>
+
+        <section id="GALLERY" class="section gallery grey darken-4 white-text scrollspy">
+            <div class="container">
+                <h3 class="center">Gallery</h3>
+                <p class="white-text hide-on-med-and-down center">Photos from Our Italy tours this year</p>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery1.jpg" alt="Italy" class="materialboxed responsive-img" data-caption="View of Florence and the Catherdal of Santa Maria del Flore.">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery2.jpeg" alt="Italy" class="materialboxed responsive-img" data-caption="Leaning tower of Pisa.">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery3.jpg" alt="Italy" class="materialboxed responsive-img" data-caption="Basilica di Santa Maria at sunset.">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery4.jpg" alt="Italy" class="materialboxed responsive-img" data-caption="Parked gondalas in Venice.">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery5.jpg" alt="Italy" class="materialboxed responsive-img" data-caption="Pienza in Tuscany, Italy.">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery6.jpg" alt="Italy" class="materialboxed responsive-img" data-caption="Royal palace of Caserta.">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery7.jpeg" alt="Italy" class="materialboxed responsive-img" data-caption="Italy Getaway.">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery8.jpeg" alt="Italy" class="materialboxed responsive-img" data-caption="Italy Getaway.">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/ItalyGallery9.jpeg" alt="Italy" class="materialboxed responsive-img" data-caption="Italy Getaway.">
+                    </div>
+                </div>
+            </div>
+        </scetion>
+
+        <section id="ABOUT" class="section about grey lighten-5 scrollspy">
+            <div class="container">
+                <h3 class="center">About Italy</h3>
+                <ul class="collapsible white">
+                    <li class="active">
+                        <div class="collapsible-header">
+                            BEST TIME TO VISIT
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                The best time to visit Italy is during the first half of May, the last half of October, or the second half of August.<br>
+                                Visiting Italy in the summer months has changed in the past decade because the second half of August has become a great time to visit
+                                due to smaller crowds and the waning summer heat.<br>
+
+                                Many websites recommend September to visit Italy, but this is outdated information. Italy travel specialists on TRVL note that travelers
+                                in September find higher hotel prices and larger crowds versus the second half of August.<br>
+                                Visiting Italy in the first half of May or the latter half of October offers you better weather, fewer crowds, and the welcoming culture
+                                of shops, restaurants, and markets in full swing.<br><br>
+                                You should plan your trip to Italy up to eight months in advance if you wish to visit destinations such as the Amalfi Coast and Cinque
+                                Terre. Due to the demand of visitors that travel to these gorgeous destinations and the limited number of hotels, you must reserve your
+                                space ahead of time, depending on the time of year you wish to travel. We recommend planning your Italy tour up to 12 months in advance
+                                for the most optimal travel experience.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            ESSENTIAL EXPERIENCES
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                During your Italy tour, you can visit more UNESCO World Heritage Sites than any other country in the world. You can also enjoy
+                                some of the world’s finest art, delicious cuisine, and stunning architecture.<br>
+                                The following list offers our recommendations on the range of quintessential experiences you must see on your trip to Italy:
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem">Best Way to Experience Rome</p>
+                                Rome is an enchanting city with a unique history, heritage, and culture, providing an extraordinary list of monuments, museums,
+                                and restaurants. During your Italy tour, the following are essential experiences that you must indulge in when first visiting Rome:<br>
+                                Three Must-Do Tours in Rome (3-4 days depending on pace):
+                                <ol type="1">
+                                    <li>
+                                        Imperial Rome<br>Discover the Colosseum, Roman Forum, and other Roman ruins.
+                                    </li>
+                                    <li>
+                                        Vatican city<br>Experience the Sistine Chapel, St. Peter’s Basilica, museums, and historical works of art.
+                                    </li>
+                                    <li>
+                                        Classic Rome<br>Witness the Trevi Fountain, Spanish Steps, and Pantheon.
+                                    </li>
+                                </ol>
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem">Best Way to Experience Florence & Tuscany</p>
+                                Florence is a captivating city known as the Cradle of the Renaissance and offers an exquisite collection of museums, artwork, and
+                                access to Tuscany. We label the following experiences as essential when in Florence during your Italy vacation:<br>
+                                Private Tours in Florence and Tuscany (2-3 Days depending on pace):
+                                <ol type="1">
+                                    <li>
+                                        Renaissance Florence<br>
+                                        Visit the Ponte Vecchio, Duomo (Cattedrale di Santa Maria del Fiore), Piazza Santa Croce, and Museo
+                                        dell’Opera dell Duomo.
+                                    </li>
+                                    <li>
+                                        Artistic Florence<br>
+                                        Discover the Uffizi, Galleria dell’Accademia, Bargello National Museum, and Casa Buonarroti.
+                                    </li>
+                                    <li>
+                                        Tuscany Tours<br>
+                                        Enjoy an Olive Oil Tour and Tasting, Wine Tour (Chianti), and the towns of Siena, San Gimignano, Pisa, and Lucca.
+                                    </li>
+                                </ol>
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Best Way to Experience Venice</p>
+                                Venice is a romantic city famous for its canals and the bulbous domes of St. Mark’s Cathedral. The city also offers an exceptional view
+                                of the history, romance, and grandeur of the former Republic. We recommend the following experiences when visiting Venice:<br>
+                                Must-Do Experiences in Venice (2 Days depending on pace):
+                                <ol type="1">
+                                    <li>
+                                        Venice City Tour<br>
+                                        Visit Doge’s Palace, St. Mark’s Square, the Jewish Ghetto, and the Grand Canal.
+                                    </li>
+                                    <li>
+                                        Private gondola ride<br>
+                                        Enjoy a scenic ride through the canals with a gondolier.
+                                    </li>
+                                    <li>
+                                        Venetian Lagoon Tour<br>
+                                        Visit Murano Island for glass artifacts & a glassblowing demonstration in addition to Burano Island for colorful houses, a lacemaking
+                                        tradition, and charming canals.
+                                    </li>
+                                </ol>
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            SPECIAL INTERESTS & ACTIVITIES
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                Traveling with TRVL provides you with exclusive access to many activities, excursions, and tours for a distinctive experience. The
+                                following information offers insight into our recommended experiences and can be tailored to focus on your unique interests:
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Best Food & Wine Destinations</p>
+                                Italy is one of the world’s top culinary destinations. Indeed, great food is everywhere in Italy. When you travel with TRVL, you’ll get
+                                personalized recommendations on where to eat. The following recommendations highlight some of the best Italian regions for food and wine:
+                                <ol type="1">
+                                    <li>
+                                        Emilia-Romagna<br>
+                                        Emilia-Romagna is known as Italy’s culinary heart with unique food and wine experiences. Focused on both refined and bold flavors,
+                                        you will enjoy everything from homemade pastas stuffed with herbs to famous Prosciutto di Parma, Parmigiano cheese and customary
+                                        ragù. All will be accompanied by traditional wines.
+                                    </li>
+                                    <li>
+                                        Florence & Tuscany<br>
+                                        Florence and the region of Tuscany are incredible destinations for essential food and wine experiences due to the excellent history
+                                        of regional gastronomy and for turning simple ingredients, classic dishes, and delicious wines into renowned traditions similar to
+                                        preserved art.
+                                    </li>
+                                    <li>
+                                        Piemonte<br>
+                                        Piemonte is a fundamental destination for food and wine in Italy. It specializes in producing fine Barolo, which is considered to be
+                                        the best of the best Italian wines. This region houses the headquarters of the Slow Food movement and hosts the world’s most distinguished
+                                        food exhibition, the Salone del Gusto.
+                                    </li>
+                                </ol>
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Art & History</p>
+                                Italy is one of the world’s foremost destinations for paintings, architecture, mosaics, and sculptures, making art an essential experience during
+                                your Italy tour. Italy’s art accounts for some of Europe’s most iconic images.<br>
+                                Must-See Art Museums & Attractions:
+                                <ol type="1">
+                                    <li>
+                                        Vatican Museums, featuring the Sistine Chapel – Vatican city
+                                    </li>
+                                    <li>
+                                        Uffizi Gallery, featuring The Birth of Venus by Botticelli  – Florence
+                                    </li>
+                                    <li>
+                                        Galleria dell’Accademia, featuring Michelangelo’s David – Florence
+                                    </li>
+                                </ol>
+                                <br>
+                                Italy is a history lover’s paradise. Witnessing the history of the Italian peninsula is an inherent experience due to its ruins, palaces, museums,
+                                and architecture that span from the ancient Roman Empire to today’s modern nation. In particular, the entire cities of Rome, Florence, and Venice are
+                                living museums with some of the most significant historical developments in Western civilization. On a customized TRVL trip, we can arrange private
+                                tours with specialized history guides, such as a former archaeologist with a PhD or a history professor. We can also organize history-focused small-group
+                                tours with a certified guide.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="center">
+                    <a href="Inquire.html" class="btn-large waves-effect waves-dark" id="planning-btn">start planning my trip</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="CONTACT" class="section section-contact grey darken-4 white-text scrollspy">
+            <div class="container">
+                <div class="row center">
+                    <div class="col s12">
+                        <a class="white-text" href="#">
+                            <i class="fab fa-twitter fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-instagram fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-facebook fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-pinterest fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="mailto:trvl@trvl.com">
+                            <i class="far fa-envelope fa-4x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h6 class="white-text">Subscribe to our newsletter</h6>
+                        <form class="newsletter" action="index.html" method="post">
+                            <div class="input-field">
+                                <input type="text" name="name" value="" placeholder="Your name" required>
+                                <input type="email" name="email" value="" placeholder="Your Email address" required>
+                                <button class="btn-small light-blue accent-3 waves-effect waves-light" type="submit" name="action">Subscribe
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col s12 m6">
+                        <p class="copyright flow-text">Copyright &copy 2019 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+                        <p class="headquarters flow-text left">Headquarters: 1580 W. El Camino Real, Suite 14, Mountain View, CA 94040, USA
+                            Denver Branch: 1437 Larimer Street, Suite 200, Denver, CO 80202, USA
+                        </p>
+                        <p><span class="recruting flow-text">Are you a <em>top travel specialist?</em> </span>
+                        <a class="contact-section-link flow-text" href="#">Click here to contact us!</a></p>
+                        <a class="contact-section-link flow-text" href="#">Privacy Policy</a><br>
+                        <a class="contact-section-link flow-text" href="#">Terms Of Use</a><br>
+                        <a class="contact-section-link flow-text" href="#">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+         <script type="text/javascript" src="js/materialize.min.js"></script>
+         <script type="text/javascript">
+            const sideNav = document.querySelector('.sidenav');
+            M.Sidenav.init(sideNav, {});
+
+            // Mega dropdown
+             const dropdown = document.querySelectorAll('.dropdown-trigger');
+             M.Dropdown.init(dropdown, {
+                 coverTrigger: false,
+                 inDuration: 300,
+ 				outDuration: 150,
+             });
+
+             // MaterialBox gallery
+             const mbox = document.querySelectorAll('.materialboxed');
+             M.Materialbox.init(mbox, {});
+
+             const colap = document.querySelector('.collapsible');
+             M.Collapsible.init(colap, {});
+
+             var scroll = document.querySelectorAll('.scrollspy');
+             M.ScrollSpy.init(scroll, {});
+        </script>
+    </body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <!-- import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- import offline material-icons -->
+        <link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+        <!-- import fontawesome -->
+        <link type="text/css"rel="stylesheet" href="css/all.css"/>
+        <!-- CSS file for the search bar -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <script src="js/jquery-3.5.1.js"></script>
+
+        <title>TRVL</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar-fixed">
+                <nav class="grey darken-4">
+                    <!-- make the navbar responsive and push everything to the middle -->
+                    <div class="container">
+                        <div class="nav-wrapper">
+                            <a href="index.html" class="brand-logo">TRVL</a>
+                            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <!-- link to the sidenav menu, it targets the id mobile-nav -->
+                            <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                            </a>
+                            <!-- shows up only on large screens -->
+                            <!-- aligned to the right -->
+                            <ul class="right hide-on-med-and-down">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="section form">
+                <div class="container grey lighten-4">
+                    <div class="row">
+                        <form class="col s12" id="make-offer-form" action="" method="post">
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>Air Transportation</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+	                            <div class="col s12 m6">
+	                                <p class="label" style="font-size: 1.1em">Flight Type</p>
+	                                <label>
+	                                    <input class="with-gap" name="flight_type" value="international" type="radio">
+	                                    <span>International</span>
+	                                </label><br>
+		                                <label>
+	                                    <input class="with-gap" name="flight_type" value="domestic" type="radio">
+	                                    <span>Domestic</span>
+                                	</label>
+                                </div>
+                            </div>
+                            <div class="row">
+	                            <div class="col s12 m6">
+	                                <p class="label" style="font-size: 1.1em">Flight Accommodation</p>
+	                                <label>
+	                                    <input class="with-gap" name="flight_accommodation" value="First Class" type="radio">
+	                                    <span>First Class</span>
+	                                </label><br>
+		                                <label>
+	                                    <input class="with-gap" name="flight_accommodation" value="Business Class" type="radio">
+	                                    <span>Business Class</span>
+                                	</label><br>
+	                                <label>
+	                                    <input class="with-gap" name="flight_accommodation" value="Economy Class" type="radio">
+	                                    <span>Economy Class</span>
+	                                </label>
+	                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="number" id="ticket-price" name="ticket_price" min="100" max="10000" step="100" required>
+                                    <label for="ticket-price">Ticket Price in USD</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>Ground Transportation</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <input type="number" id="ground-transp" name="ground_transp_price_per_person" step="100" required>
+                                    <label for="ground-transp">Price Per Person in USD</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <h6>Lodging</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="text" id="hotel-name" name="hotel_name" class="validate" required>
+                                    <label for="hotel-name">Hotel Name</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="text" id="hotel-address" name="hotel_address" class="validate" required>
+                                    <label for="hotel-address">Hotel Address</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="number" id="number-of-rooms" name="number_of_rooms" class="validate" min="1" max="100" required>
+                                    <label for="number-of-rooms">No. Of Rooms</label>
+                                </div>
+                                <div class="input-field col s4">
+                                    <input type="number" id="price-per-room" name="room_price_per_night" class="validate" min="50" max="10000" step="100" required>
+                                    <label for="price-per-room">Room Per Night in USD</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h6>Tour Guide</h6>
+                            </div>
+                            <div class="row">
+	                            <div class="col s12 m6">
+	                                <label>
+	                                    <input class="with-gap" name="tour_guide" value="1" type="radio">
+	                                    <span>Yes</span>
+	                                </label><br>
+		                                <label>
+	                                    <input class="with-gap" name="tour_guide" value="0" type="radio">
+	                                    <span>No</span>
+                                	</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                            	<div class="input-field col s4">
+                                    <input type="number" id="price-tour-guide" name="price_tour_guide" min="50" max="10000" step="100">
+                                    <label for="price-tour-guide">Tour Guide Price in USD</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h6>Activities</h6>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <textarea id="activities-details" name="activities_details" class="materialize-textarea validate" required></textarea>
+                                    <label for="activities-details">Details</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s4">
+                                    <input type="number" id="price-per-person-activities" name="activities_price_per_person" min="50" max="10000" step="100" required>
+                                    <label for="price-per-person-activities">Price Per Person in USD</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h6>Suggestions And Remarks</h6>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <textarea id="suggestions" name="suggestions" class="materialize-textarea"></textarea>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <button type="submit" class="btn btn-large waves-effect waves-light" id="sign-up-btn" name="action">Make Offer
+                                        <i class="material-icons right">done</i>
+                                    </button>
+                                    <span id="response">
+
+                                    </span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="page-footer grey darken-4">
+            <div class="row">
+                <p class="copyright flow-text center white-text">Copyright &copy 2020 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script type="text/javascript">
+            // initialize date datepicker
+            document.addEventListener('DOMContentLoaded', function() {
+                var elems = document.querySelectorAll('.datepicker');
+                var instances = M.Datepicker.init(elems, {},);
+            });
+            // initialize select dropdown menus
+            document.addEventListener('DOMContentLoaded', function() {
+                var drop = document.querySelectorAll('select');
+                var inst = M.FormSelect.init(drop, {},);
+            });
+
+
+            $(document).ready(function(){
+                // function to make form values to json format
+                $.fn.serializeObject = function(){
+                 
+                    var o = {};
+                    var a = this.serializeArray();
+                    $.each(a, function() {
+                        if (o[this.name] !== undefined) {
+                            if (!o[this.name].push) {
+                                o[this.name] = [o[this.name]];
+                            }
+                            o[this.name].push(this.value || '');
+                        } else {
+                            o[this.name] = this.value || '';
+                        }
+                    });
+                    return o;
+                };
+
+                // trigger when login form is submitted
+                $(document).on('submit', '#make-offer-form', function(){
+                    // get JWT value
+                    var jwt = getCookie('jwt');
+
+                    // get inquiry id from query string
+                    var queryString = decodeURIComponent(window.location.search); //parsing 
+                    var inquiry_id = queryString.substring(4);
+                    console.log(inquiry_id);
+
+                    // get form data
+                    var inquire_form = $(this);
+                    var form_data = JSON.stringify($('form').serializeObject());
+                    var jsonObject = JSON.parse(form_data);
+                    jsonObject['jwt'] = jwt;
+                    jsonObject['id'] = inquiry_id;
+                    var json_data = JSON.stringify(jsonObject);
+
+                    console.log(json_data);
+
+                    // submit form data to api
+                    $.ajax({
+                        url: "http://localhost/trvl/api/offer/create_offer.php",
+                        type : "POST",
+                        contentType : 'application/json',
+                        data : json_data,
+                        success : function(result){
+                            $('#response').html("Offer Made.");
+                            $('#response').css("color", "#4BB543")
+                        },
+                        error: function(resp){
+                            // get error string from the returned JSON response
+                            var error = JSON.parse(resp.responseText)['error'];
+                            $('#response').html(error);
+                            $('#response').css("color", "red");
+                        }
+                    });        
+                    return false;
+                });
+
+                // get or read cookie
+                // used to read the jwt from the cookie in order to verify it
+                function getCookie(cname){
+                    var name = cname + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    for(var i = 0; i <ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' '){
+                            c = c.substring(1);
+                        }
+                 
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+            });
+        </script>
+    </body>
+</html>

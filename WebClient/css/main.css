@@ -1,0 +1,355 @@
+body {
+    font-family: Verdana, Arial, sans-serif;
+}
+
+/* Search bar */
+.section-search input {
+    padding: 5px !important;
+    font-size: 20px !important;
+    width: 90% !important;
+    border: #f4f4f4 3px solid !important;
+}
+
+/* change defualt dropdown text color */
+.dropdown-content li>a, .dropdown-content li>span {
+  color: #212121!important;
+}
+
+/* blue highlight on autocomp */
+.autocomplete-content li .highlight {
+  color: #00b0ff!important;
+}
+
+/* Change inquire button's border and text color */
+#inquire-btn {
+    color: #00b0ff;
+    border: #00b0ff 1px solid!important;
+}
+/* button on login page */
+#login-btn {
+    color: #ffffff;
+    background-color: #00b0ff!important;
+    border: #00b0ff 1px solid!important;
+    width: 100%;
+}
+/* button on create_account page */
+#sign-up-btn {
+    color: #ffffff;
+    background-color: #00b0ff!important;
+    border: #00b0ff 1px solid!important;
+}
+#update-offer-btn {
+    color: #ffffff;
+    background-color: #00b0ff!important;
+    border: #00b0ff 1px solid!important;
+}
+#make-offer-btn {
+    color: #ffffff;
+    background-color: #00b0ff!important;
+    border: #00b0ff 1px solid!important;
+}
+#inquire-btn:hover {
+    color: #ffffff;
+    background-color: #00b0ff!important;
+}
+#planning-btn {
+    color: #ffffff;
+    background-color: #00b0ff;
+    margin-top: 20px;
+    margin-bottom: 35px;
+
+}
+#planning-btn:hover {
+    color: #00b0ff;
+    background-color: #f5f5f5!important;
+    border: #00b0ff 2px solid!important;
+
+}
+
+/* font color for headers and paragraphs */
+.section-icons h4, .section-icons p, .section-steps h3, .section-steps p, .section-cotact h {
+    color: #212121 !important;
+}
+
+/* Steps section */
+.list-counter{
+    color: #212121;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-right: 3%;
+}
+.steps {
+    color: #212121;
+    font-size: 1.5rem;
+}
+
+/* Contact Section */
+.section-contact i {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.copyright, .headquarters, .recruting, .contact-section-link {
+    font-size: 0.8rem;
+}
+a.contact-section-link {
+    color: #00b0ff;
+}
+a.contact-section-link:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+.section-contact form div input {
+    background-color: #ffffff!important;
+    padding: 5px !important;
+    width: 80% !important;
+    border: #212121 2px solid !important;
+}
+
+
+/* mega dropdown */
+.mega {
+    min-width: 610px!important;
+    min-height: 300px!important;
+}
+.mega .dest-group {
+    text-align: center;
+    padding-top: 1rem;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+/*
+    For destination pages
+*/
+
+/* mobile banner */
+@media only screen and (max-width : 767px) {
+  .banner img {
+    width: 100%;
+    height: auto;
+  }
+}
+/* Desktop banner */
+@media only screen and (min-width: 767px) {
+    .banner img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.description div h3 {
+    color: #212121;
+}
+.description div p {
+    color: #212121;
+    font-size: 1.2rem;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.about div h3 {
+    color: #212121;
+}
+.collapsible {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.collapsible li {
+    color: #212121;
+}
+.collapsible-header {
+    font-weight: 500!important;
+    font-size: 1.2rem!important;
+}
+.collapsible-body {
+    font-size: 1.1rem!important;
+    padding-top: 0!important;
+    padding-bottom: 1rem!important;
+}
+
+
+/* Inquire */
+form h5.form-step {
+    margin-top: 2rem;
+}
+form p.label {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0rem;
+}
+
+/* pad every row in the form */
+form .row {
+    padding-left: 2rem!important;
+}
+
+/* change default select dropdown color */
+.select-dropdown{
+    color: #212121;
+}
+ul.dropdown-content.select-dropdown li span {
+    color: #212121;
+}
+
+
+/* change default datepicker colors */
+.datepicker-date-display {
+    background: #212121;
+}
+.datepicker-calendar-container {
+    color: #212121;
+}
+.is-today {
+    color: #212121;
+
+}
+.datepicker-table td.is-selected {
+    background: #212121;
+}
+.datepicker-cancel, .datepicker-done {
+    color: #212121;
+}
+
+/* change default range slider color */
+input[type=range]::-webkit-slider-thumb {
+  background-color: #212121;
+}
+input[type=range]::-moz-range-thumb {
+  background-color: #212121;
+}
+input[type=range]::-ms-thumb {
+  background-color: #212121;
+}
+input[type=range] + .thumb {
+  background-color: #212121;
+}
+input[type=range] + .thumb.active .value {
+  color: #ffffff;
+}
+
+/* change default number input field color */
+input[type=number]:focus:not([readonly]) {
+border-bottom: 1px solid #212121!important;
+box-shadow: 0 1px 0 0 #212121!important;
+}
+
+/* change default checkbox check color */
+.checkbox-grey[type="checkbox"].filled-in:checked + span:not(.lever):after
+{
+    border: 2px solid #212121;
+    background-color: #212121;
+}
+
+/* change default textarea color */
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #212121;
+    box-shadow: 0 1px 0 0 #212121;
+}
+
+/* change default input field and label color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #212121!important;
+    box-shadow: 0 1px 0 0 #212121!important;
+
+}
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #212121!important;
+    box-shadow: 0 1px 0 0 #212121!important;
+
+}
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid #212121!important;
+    box-shadow: 0 1px 0 0 #212121!important;
+
+}
+.input-field input[type=tel]:focus {
+    border-bottom: 1px solid #212121!important;
+    box-shadow: 0 1px 0 0 #212121!important;
+
+}
+.input-field label {
+    color: #212121!important;
+}
+
+/* change default email input field color */
+.input-field input[type=email]:focus {
+    border-bottom: 1px solid #212121!important;
+    box-shadow: 0 1px 0 0 #212121!important;
+}
+
+
+
+/* makes the footer sticky
+requires using <header> <main> <footer> structure
+*/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+  main {
+    flex: 1 0 auto;
+}
+
+
+/* inquiry cards in account pages */
+.inquiry-card p {
+    padding-bottom: 2%;
+}
+.inquiry-card a {
+    color: #00b0ff!important;
+}
+/* disable update offer link for cards in agent_account */
+.inquiry-card .disabled-link {
+    pointer-events:none!important;
+    color: #bdbdbd!important;
+}
+.inquiry-card img {
+    width: 100%!important;
+    height: 100%!important;
+    object-fit:cover!important;
+}
+
+/* modal footer buttons */
+.modal-make-offer-btn {
+    color: #ffffff!important;
+    background-color: #00b0ff!important;
+    border: #00b0ff 1px solid!important;
+}
+.modal-footer a {
+    color: #ffffff!important;
+}
+
+/* change default size of modal box */
+.modal {
+    width: 70%!important;
+    height: 80%!important;
+    max-height: 100%!important;
+}
+
+#modal-request-changes {
+    width: 60%!important;
+    height: 60%!important;
+    max-height: 100%!important;
+}
+
+/* modal for mobile and tablet */
+@media (max-width: 800px) {
+    .modal {
+        width: 90%!important;
+        height: 80%!important;
+        max-height: 100%!important;
+    }
+    #modal-request-changes {
+        width: 90%!important;
+        height: 75%!important;
+        max-height: 100%!important;
+    }
+}
+
+
+/* payment info card logo size */
+.fa-cc-visa, .fa-cc-mastercard, .fa-cc-amex {
+    font-size: 2em!important;
+}

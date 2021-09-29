@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- import offline material-icons -->
+        <link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+        <!-- import fontawesome -->
+        <link type="text/css"rel="stylesheet" href="css/all.css"/>
+        <!-- CSS file for the search bar -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>TRVL</title>
+    </head>
+
+    <body id="HOME" class="scrollspy">
+        <!-- navbar -->
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="index.html" class="brand-logo">TRVL</a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <!-- link to the sidenav menu, it targets the id mobile-nav -->
+                        <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                        </a>
+                        <!-- shows up only on large screens -->
+                        <!-- aligned to the right -->
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href="#HOME">Home</a>
+                            </li>
+                            <li>
+                                <a href="#SEARCH">Search</a>
+                            </li>
+                            <li>
+                                <a href="#POPULAR">Popular</a>
+                            </li>
+                            <li>
+                                <a href="#CONTACT">Contact</a>
+                            </li>
+
+                            <!-- dropdown -->
+                            <li>
+                                <a class="dropdown-trigger" href="#" data-target="dropdown1">Recommended<i class="material-icons right">arrow_drop_down</i></a>
+                            </li>
+                            <li>
+                                <a href="inquire.html" class="btn grey darken-4 waves-effect waves-dark" id="inquire-btn">INQUIRE</a>
+                            </li>
+                            <li>
+                                <a href="" id="account-link"><i class="material-icons prefix">account_circle</i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- outter dropdown triggered by the dropdown button destinations -->
+        <ul id='dropdown1' class='dropdown-content mega'>
+            <div class="row">
+                <div class="col m4">
+                    <li class="dest-group">Asia</li>
+                    <li class="divider"></li>
+                    <li><a href="Japan.html">Japan</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">India</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">China</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Russia</a></li>
+                </div>
+                <div class="col m4">
+                    <li class="dest-group">Europe</li>
+                    <li class="divider"></li>
+                    <li><a href="Italy.html">Italy</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Ireland</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">France</a></li>
+                </div>
+                <div class="col m4">
+                    <li class="dest-group">America</li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Canada</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Mexico</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Bahamas</a></li>
+                </div>
+            </div>
+         </ul>
+
+
+        <!-- sidenav list item targeted by the menu button in the navbar -->
+        <ul class="sidenav" id="mobile-nav">
+            <li>
+                <a class="sidenav-close" href="#HOME">Home</a>
+            </li>
+            <li>
+                <a class="sidenav-close" href="#SEARCH">Search</a>
+            </li>
+            <li>
+                <a class="sidenav-close" href="#POPULAR">Popular</a>
+            </li>
+            <li>
+                <a class="sidenav-close" href="#CONTACT">Contact</a>
+            </li>
+        </ul>
+
+        <!-- Slider -->
+        <section class="slider">
+            <ul class="slides">
+                <li>
+                    <img src="img/Norway.jpg">
+                    <div class="caption center-align">
+                        <h2>Your dream vacation</h2>
+                        <h5 class="light text-lighten-2 hide-on-small-only">Customized by specialists who know what the guidebooks don't</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/Asia.jpg">
+                    <div class="caption left-align">
+                        <h2>Extraodinary experiences, designed just for you</h2>
+                        <h5 class="light text-lighten-2 hide-on-small-only">World's best travel agents, all personally vetted by us</h5>
+                    </div>
+                </li>
+                <li>
+                    <img src="img/Australia.jpg">
+                    <div class="caption right-align">
+                        <h2>Find travel perfection with the wisdom of experts</h2>
+                        <h5 class="light text-lighten-2 hide-on-small-only">We build the trips, you build the memories</h5>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- search -->
+        <section id="SEARCH" class="section section-search grey darken-4 white-text center scrollspy">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
+                        <h3>Search Destinations</h3>
+                        <div class="input-field">
+                            <input type="text" id="autocomplete-input" class="white grey-text autocomplete" placeholder="France, Spain, etc...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- card panel -->
+        <section class="section section-icons grey lighten-4 center">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m4 l4">
+                        <div class="card-panel">
+                            <i class="material-icons large black-text">perm_phone_msg</i>
+                            <h4>Connect</h4>
+                            <p>Connect with the most knowledgeable travel specialists for your vacation.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="card-panel">
+                            <i class="material-icons large black-text">local_airport</i>
+                            <h4>Experience</h4>
+                            <p>Experience the wonder of an exceptional itinerary crafted for you.</p>
+                        </div>
+                    </div>
+                    <div class="col s12 m4 l4">
+                        <div class="card-panel">
+                            <i class="material-icons large black-text">star</i>
+                            <h4>Review</h4>
+                            <p>Review your trip, so you can help other travelers with your candid feedback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- popular -->
+        <section id="POPULAR" class="section section-popular grey darken-4 center scrollspy">
+            <div class="container">
+                <h3 class="white-text">Popular Destinations</h3>
+                <p class="white-text hide-on-med-and-down">This year's most popular destinations</p>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="Japan.html">
+                                    <img src="img/Japan1.jpg">
+                                </a>
+                                <a href="Japan.html">
+                                    <span class="card-title">Japan</span>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                Discover Japan&#39;s dichotomy of ancient culture and modern progress
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="Italy.html">
+                                    <img src="img/ItalyGallery4.jpg">
+                                </a>
+                                <a href="Italy.html">
+                                    <span class="card-title">Italy</span>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                Quintessential Italian vacation and exclusive access to the best experiences
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href="#!">
+                                    <img src="img/Australia1.jpg">
+                                </a>
+                                <a href="#!">
+                                    <span class="card-title">Australia</span>
+                                </a>
+                            </div>
+                            <div class="card-content">
+                                Experience Australia's intriguing wildlife in the most breathtaking landscapes
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps -->
+        <section class="section section-steps grey lighten-4 center">
+            <div class="container">
+                <h3 class="center">4 steps to the perfect trip</h3>
+                <p class="center" style="font-size: 1.2rem; margin-right: 5%; margin-left: 5%;">
+                    Your trip planning begins the minute you submit our private trip request form. We assign one of our agents to handle your inquiry and return to you with a tailored trip offer that suits your needs.
+                 </p>
+
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <span class="steps"><span class="list-counter left">1</span>You tell us the destinations, dates and preferred ingredients of your dream trip</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <span class="steps"><span class="list-counter left">2</span>We match you with a travel specialist and link them (and only them) to your private information at TRVL.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <span class="steps"><span class="list-counter left">3</span>We compete for your business, offering expert advice and developing detailed proposals.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card horizontal">
+                        <div class="card-stacked">
+                            <div class="card-content">
+                                <span class="steps"><span class="list-counter left">4</span>You purchase the ideal itinerary after it gets refined to perfection with you.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="inquire.html" class="btn-large waves-effect waves-dark" id="planning-btn">start planning my trip</a>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="section section-contact grey darken-4 white-text scrollspy" id="CONTACT">
+            <div class="container">
+                <div class="row center">
+                    <div class="col s12">
+                        <a class="white-text" href="#">
+                            <i class="fab fa-twitter fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-instagram fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-facebook fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-pinterest fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="mailto:trvl@trvl.com">
+                            <i class="far fa-envelope fa-4x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h6 class="white-text">Subscribe to our newsletter</h6>
+                        <form class="newsletter" action="index.html" method="post">
+                            <div class="input-field">
+                                <input type="text" name="name" value="" placeholder="Name" required>
+                                <input type="email" name="email" value="" placeholder="Email address" required>
+                                <button class="btn-small light-blue accent-3 waves-effect waves-light" type="submit" name="action">Subscribe
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col s12 m6">
+                        <p class="copyright flow-text">Copyright &copy 2020 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+                        <p class="headquarters flow-text left">
+                            Headquarters: 1580 W. El Camino Real, Suite 14, Mountain View, CA 94040, USA
+                            Denver Branch: 1437 Larimer Street, Suite 200, Denver, CO 80202, USA
+                        </p>
+                        <p><span class="recruting flow-text">Are you a <em>top travel specialist?</em> </span>
+                        <a class="contact-section-link flow-text" href="#">Click here to contact us!</a></p>
+                        <a class="contact-section-link flow-text" href="#">Privacy Policy</a><br>
+                        <a class="contact-section-link flow-text" href="#">Terms Of Use</a><br>
+                        <a class="contact-section-link flow-text" href="#">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- JS at the end of the body for optimized loading -->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <script>
+            // Init the sidenav
+            const sideNav = document.querySelector('.sidenav');
+            M.Sidenav.init(sideNav, {});
+
+            // Init the Slider
+            const slider = document.querySelector('.slider');
+            M.Slider.init(slider, {
+                indicators: false,
+                height: 550,
+                duration: 500,
+                interval: 5000,
+            });
+
+            // Init dropdowns
+            const dropdown = document.querySelectorAll('.dropdown-trigger');
+            M.Dropdown.init(dropdown, {
+                coverTrigger: false,
+                inDuration: 300,
+				outDuration: 150,
+            });
+
+            // Init Autocomplete
+            const autocomp = document.querySelector('.autocomplete');
+            M.Autocomplete.init(autocomp, {
+                data: {
+                    "Japan": null,
+                    "Italy": null,
+                    "Spain": null,
+                    "Bahams": null,
+                    "Canada": null,
+                    "Mexico": null,
+                    "France": null,
+                    "China": null,
+                    "Germany": null,
+                    "New Zealand": null,
+                    "Australia:": null,
+                },
+                // Callback for click
+                onAutocomplete: function(txt) {
+                    if(txt == "Italy" || txt == "Japan") {
+                        // open corresponding html file
+                        window.open(txt+".html", "_self");
+                    } else {
+                        window.alert("Not implemented");
+                    }
+                },
+                limit: 4
+            });
+
+            // Init scrollspy
+            var scroll = document.querySelectorAll('.scrollspy');
+            M.ScrollSpy.init(scroll, {});
+
+
+            // set href for account-link
+            var role = getCookie("agent");
+            if(role == 0) {
+                document.getElementById("account-link").setAttribute("href", "http://localhost/project/user_home.html");
+            } else {
+                document.getElementById("account-link").setAttribute("href", "http://localhost/project/agent_home.html");
+            }
+
+
+            function getCookie(cname){
+                    var name = cname + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    for(var i = 0; i <ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' '){
+                            c = c.substring(1);
+                        }
+                 
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+        </script>
+    </body>
+</html>

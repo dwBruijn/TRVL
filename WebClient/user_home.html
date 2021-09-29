@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!-- import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!-- import offline material-icons -->
+		<link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+		<!-- import fontawesome -->
+		<link type="text/css"rel="stylesheet" href="css/all.css"/>
+		<!-- CSS file for the search bar -->
+		<link rel="stylesheet" href="css/main.css"/>
+		<!-- let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<script src="js/jquery-3.5.1.js"></script>
+
+		<title>TRVL</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="navbar-fixed">
+				<nav class="grey darken-4">
+					<!-- make the navbar responsive and push everything to the middle -->
+					<div class="container">
+						<div class="nav-wrapper">
+							<a href="index.html" class="brand-logo">TRVL</a>
+							<a href="#" data-target="mobile-nav" class="sidenav-trigger">
+								<i class="material-icons">menu</i>
+							</a>
+							<!-- link to the sidenav menu, it targets the id mobile-nav -->
+							<a href="#" class="sidenav-trigger" data-target="mobile-nav">
+							</a>
+							<!-- shows up only on large screens -->
+							<!-- aligned to the right -->
+							<ul class="right hide-on-med-and-down">
+								<li>
+									<!-- based on the account username -->
+									<a class="dropdown-trigger" id="account-name" href="#" data-target="dropdown1">account_name<i class="material-icons right">arrow_drop_down</i></a>
+								</li>
+								<li>
+									<a href="inquire.html" class="btn grey darken-4 waves-effect waves-dark" id="inquire-btn">INQUIRE</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+
+			<!-- Account dropdown -->
+			<!-- must be updated -->
+			<ul id='dropdown1' class='dropdown-content'>
+				<li>
+					<a href="update_account.html">Update Account</a>
+				</li>
+				<li class="divider" tabindex="-1"></li>
+				<li>
+					<a href="#" id="logout-trigger">Logout</a>
+				</li>
+			</ul>
+
+			<!-- sidenav list item targeted by the menu button in the navbar -->
+			<!-- must be updated -->
+			<ul class="sidenav" id="mobile-nav">
+				<li>
+					<a href="#!">Inquire Now</a>
+				</li>
+				<li>
+					<a class="sidenav-close" href="#HOME">Update Account</a>
+				</li>
+				<li>
+					<a class="sidenav-close" href="#" id="logout-trigger">Logout</a>
+				</li>
+			</ul>
+		</header>
+
+		<main class="grey lighten-4">
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h5>Your Inquiries</h5>
+					</div>
+				</div>
+				<div id="inquiries">
+					<div>
+				</div>
+			</div>
+
+			<div class="modal modal-fixed-footer" id="mdl1">
+				<div class="modal-content">
+					<h5>Offer Details</h5>
+					<h6>Transportation</h6>
+					<ul class="collection">
+						<li class="collection-item"><b>Flight Type: </b> 
+							<span id="flight-type"></span>
+						</li>
+						<li class="collection-item"><b>Flight Accommodation: </b>
+							<span id="flight-accommodation"></span>
+						</li>
+						<li class="collection-item"><b>Ticket Price: $</b>
+							<span id="ticket-price"></span>
+						</li>
+						<li class="collection-item"><b>Ground Transportation Per Person: $</b>
+							<span id="ground-transp-price-per-person"></span>
+						</li>
+					</ul>
+					<h6>Lodging</h6>
+					<ul class="collection">
+						<li class="collection-item"><b>Hotel Name: </b>
+							<span id="hotel-name"></span>
+						</li>
+						<li class="collection-item"><b>Hotel Address: </b>
+							<span id="hotel-address"></span>
+						</li>
+						<li class="collection-item"><b>Number Of Hotel Rooms: </b>
+							<span id="number-of-rooms"></span>
+						</li>
+						<li class="collection-item"><b>Room Price Per Night: $</b>
+							<span id="room-price-per-night"></span>
+						</li>
+					</ul>
+					<h6>Tour Guide</h6>
+					<ul class="collection">
+						<li class="collection-item"><b>Tour Guide: </b>
+							<span id="tour-guide"></span>
+						</li>
+						<li class="collection-item"><b>Tour Guide Price: $</b>
+							<span id="price-tour-guide"></span>
+						</li>
+					</ul>
+					<h6>Activities</h6>
+					<ul class="collection">
+						<li class="collection-item"><b>Activities Details</b>
+							<br>
+							<span id="activities-details"></span>
+						</li>
+						<li class="collection-item"><b>Activities Price Per Person: $</b>
+							<span id="activities-price-per-person"></span>
+						</li>
+					</ul>
+					<ul class="collection">
+						<li class="collection-item"><b>General Suggestions</b>
+							<br>
+							<span id="suggestions"></span>
+						</li>
+						<li class="collection-item"><b>Trip Total Price: $</b>
+							<span id="total-price"></span>
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<form id="offer-action-form" class="offer-action-form" action="" method="POST">
+						<input type="hidden" id="form-jwt" name="jwt" value="">
+						<input type="hidden" id="form-offer-id" name="offer_id" value="">
+					</form>
+					<a href="" class="accept-offer btn waves-effect waves-light modal-make-offer-btn modal-close">Accept Offer</a>
+					<!-- triggers another modal to receive requested changes -->
+					<a href="#modal-request-changes" class="modal-trigger btn waves-effect waves-light modal-make-offer-btn modal-close">Decline Offer</a>
+					<a href="#!" class="btn waves-effect waves-light modal-make-offer-btn modal-close">Close</a>
+				</div>
+			</div>
+
+			<!-- form to send requested changes so that the agent can update the offer -->
+            <div class="modal modal-fixed-footer" id="modal-request-changes">
+                <div class="modal-content">
+                    <h5>What would you like to change?</h5>
+                    <span>Write in details anything that you would like to update, add, or remove.</span>
+                    <br>
+                    <span>Your agent will receive this and the offer will be updated to suit your demands.</span>
+                    <div class="row">
+                        <form class="col s12 request-changes-form" action="" method="POST">
+                            <div class="input-field col s12">
+                                <textarea id="requested-changes" name="requested_changes" type="text" class="materialize-textarea validate" required></textarea>
+                                <input type="hidden" id="requested-changes-jwt" name="jwt" value="">
+								<input type="hidden" id="requested-changes-offer-id" name="offer_id" value="">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="" class="request-changes btn waves-effect waves-light modal-make-offer-btn">Request Changes</a>
+                    <a href="" class="btn waves-effect waves-light modal-make-offer-btn modal-close">Close</a>
+                </div>
+            </div>
+
+
+			<form id="jwt-form" class="jwt-form" action="" method="POST">
+				<input type="hidden" id="jwt" name="jwt" value="">
+			</form>
+		</main>
+
+		<footer class="page-footer grey darken-4">
+			<div class="row">
+				<p class="copyright flow-text center white-text">Copyright &copy 2020 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript">
+			// Init the sidenav
+			const sideNav = document.querySelector('.sidenav');
+			M.Sidenav.init(sideNav, {});
+			// Init dropdowns
+			const dropdown = document.querySelectorAll('.dropdown-trigger');
+			M.Dropdown.init(dropdown, {
+				coverTrigger: false,
+				inDuration: 300,
+				outDuration: 150,
+			});
+			// Init modal
+			const elemsModal = document.querySelectorAll(".modal");
+			M.Modal.init(elemsModal, {
+				dismissible: false
+			});
+
+
+			$(document).ready(function(){
+				// function to make form values to json format
+				$.fn.serializeObject = function(){
+				 
+					var o = {};
+					var a = this.serializeArray();
+					$.each(a, function() {
+						if (o[this.name] !== undefined) {
+							if (!o[this.name].push) {
+								o[this.name] = [o[this.name]];
+							}
+							o[this.name].push(this.value || '');
+						} else {
+							o[this.name] = this.value || '';
+						}
+					});
+					return o;
+				};
+
+				// get JWT value
+				var jwt = getCookie('jwt');
+				// set JWT field in form to be send as JSON field
+				document.getElementById("jwt").value = jwt;
+
+				var account_name = getCookie("account_name");
+				document.getElementById("account-name").innerHTML = account_name;
+
+				// get form data
+				var jwt_form = $(this);
+				var form_data = JSON.stringify($('form.jwt-form').serializeObject());
+				
+				console.log(form_data);
+
+				// submit jwt to api
+				$.ajax({
+					url: "http://localhost/trvl/api/user/get_inquiries.php",
+					type : "POST",
+					contentType : 'application/json',
+					data : form_data,
+					success : function(result){
+						var htmlData = ``;
+						var num_of_inquiries = Object.keys(result).length;
+						var inquiry_ids = Object.keys(result);
+
+						// display 2 inquiries per row
+						for(var i = 0; i < num_of_inquiries; i++) {
+							if(i % 2 == 0) {
+								htmlData += '</div><div class="row">';
+							}
+
+							htmlData += createInquiryCard(result[inquiry_ids[i]][0], result[inquiry_ids[i]][1], result[inquiry_ids[i]][3], result[inquiry_ids[i]][2], inquiry_ids[i]);
+						}
+
+						document.getElementById("inquiries").innerHTML = htmlData;
+					},
+					error: function(resp){
+						// get error string from the returned JSON response
+						var error = JSON.parse(resp.responseText)['message'];
+						console.log(error);
+						window.location.replace("http://localhost/project/login.html");
+
+					}
+				});  
+
+
+				// get or read cookie
+				// used to read the jwt from the cookie in order to verify it
+				function getCookie(cname){
+					var name = cname + "=";
+					var decodedCookie = decodeURIComponent(document.cookie);
+					var ca = decodedCookie.split(';');
+					for(var i = 0; i <ca.length; i++) {
+						var c = ca[i];
+						while (c.charAt(0) == ' '){
+							c = c.substring(1);
+						}
+				 
+						if (c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+						}
+					}
+					return "";
+				}
+
+				// function to delete cookie
+				function deleteCookie(cname, cvalue) {
+					var d = new Date();
+					d.setTime(d.getTime() - 999999999);
+					var expires = "expires="+ d.toUTCString();
+					document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+				}
+
+				// triggered on accept offer click
+				$('body').on('click', 'a.accept-offer', function() {
+					var offer_form_data = JSON.stringify($('form.offer-action-form').serializeObject());
+					console.log(offer_form_data);
+
+					// send offer_form_data using POST
+					$.ajax({
+					url: "http://localhost/trvl/api/offer/accept_offer.php",
+					type : "POST",
+					contentType : 'application/json',
+					data : offer_form_data,
+						success : function(result){
+							console.log("offer accepted");
+						},
+						error: function(resp){
+							// debug
+							alert("Failed to accept offer");
+						}
+					});
+				});
+
+				// triggered on request changes click
+				$('body').on('click', 'a.request-changes', function() {
+					var offer_form_data = JSON.stringify($("form.request-changes-form").serializeObject());
+					console.log(offer_form_data);
+
+					// send offer_form_data using POST
+					$.ajax({
+					url: "http://localhost/trvl/api/offer/request_changes_offer.php",
+					type : "POST",
+					contentType : 'application/json',
+					data : offer_form_data,
+						success : function(result){
+							console.log("Changes requested");
+						},
+						error: function(resp){
+							console.log("failed");
+						}
+					});
+				});
+
+				// called when the dynamically loaded delete inquiry trigger is clicked
+				$('body').on('click', 'a.delete-inquiry', function() {
+					var inq_id = $(this).attr('data-id');
+
+					var data_array = [];
+					data_array["jwt"] = jwt;
+					data_array["id"] = inq_id;
+
+					var data_json = JSON.stringify(Object.assign({}, data_array));
+
+					$.ajax({
+					url: "http://localhost/trvl/api/inquiry/delete_inquiry.php",
+					type : "POST",
+					contentType : 'application/json',
+					data : data_json,
+						success : function(result){
+
+						},
+						error: function(resp){
+							// debug
+							alert("Failed to delete inquiry");
+						}
+					});
+				});
+
+				// called when the dynamically loaded modal trigger is clicked
+				$('body').on('click', 'a.show-details', function() {
+					console.log("clicked : " + $(this).attr('data-id'));
+
+					// makes a get request to the API and gets offer data
+					$.get("http://localhost/trvl/api/offer/read_offer.php?inquiry_id="+$(this).attr('data-id'), function(data, status){
+						console.log(Object.keys(data));
+						if(status == "success") {
+							// for accept offer form
+							document.getElementById("form-jwt").value = jwt;
+							document.getElementById("form-offer-id").value = data.offer_id;
+							// for request changes form
+							document.getElementById("requested-changes-jwt").value = jwt;
+							document.getElementById("requested-changes-offer-id").value = data.offer_id;
+							document.getElementById("flight-type").innerHTML = data.flight_type;
+							document.getElementById("flight-accommodation").innerHTML = data.flight_accommodation;
+							document.getElementById("ticket-price").innerHTML = data.ticket_price;
+							document.getElementById("ground-transp-price-per-person").innerHTML = data.ground_transp_price_per_person;
+							document.getElementById("hotel-name").innerHTML = data.hotel_name;
+							document.getElementById("hotel-address").innerHTML = data.hotel_address;
+							document.getElementById("number-of-rooms").innerHTML = data.number_of_rooms;
+							document.getElementById("room-price-per-night").innerHTML = data.room_price_per_night;
+							document.getElementById("tour-guide").innerHTML = data.tour_guide;
+							document.getElementById("price-tour-guide").innerHTML = data.price_tour_guide;
+							document.getElementById("activities-details").innerHTML = data.activities_details;
+							document.getElementById("activities-price-per-person").innerHTML = data.activities_price_per_person;
+							document.getElementById("suggestions").innerHTML = data.suggestions;
+							document.getElementById("total-price").innerHTML = data.total_price;
+
+							console.log(data.offer_id);
+						}
+					});
+				});
+
+
+				function createInquiryCard(country, date, agent, status, inquiry_id) {
+					date = date.substring(0, 10);
+					var action1 = "";
+					var action2 = "Delete Inquiry";
+					var action1Class = "";
+					var action2Class = "";
+
+					if(status == "awaiting offer" || status == "offer received" || status == "offer accepted" || status == "awaiting updated offer" || status == "offer updated") {
+						action1 = "Check Offer";
+						if(status == "awaiting offer" || status == "awaiting updated offer") {
+							action1Class = "disabled-link";
+						}
+						if(status == "offer accepted") {
+							action2Class = "disabled-link";
+						}
+					}
+					var card = `
+					<div class="col s12 m6">
+							<div class="card horizontal inquiry-card" id=${inquiry_id}>
+								<div class="card-image">
+								   <img src="img/${country}Card.jpg">
+								</div>
+								<div class="card-stacked">
+									<div class="card-content">
+										<p>Country: ${country}</p>
+										<p>Date: ${date}</p>
+										<p>Agent: ${agent}</p>
+										<p>Status: ${status}</p>
+									</div>
+									<div class="card-action">
+										<div class="row">
+											<div class="col s6">
+												<a data-id="${inquiry_id}" href="#mdl1" class="${action1Class} modal-trigger show-details">${action1}</a>
+											</div>
+											<div class="col s6">
+												<a data-id="${inquiry_id}" href="" class="delete-inquiry ${action2Class}">${action2}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					`;
+
+					return card;
+				}
+
+				// logout trigger callback function
+				$(document).on('click', '#logout-trigger', function(){
+					console.log("deleted jwt");
+					deleteCookie("jwt", "");
+					deleteCookie("account_name", "");
+					deleteCookie("agent", "");
+					window.location.replace("http://localhost/project/login.html");
+				});
+			});
+		</script>
+	</body>
+</html>

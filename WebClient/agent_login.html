@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <!-- import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- import offline material-icons -->
+        <link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+        <!-- import fontawesome -->
+        <link type="text/css"rel="stylesheet" href="css/all.css"/>
+        <!-- CSS file for the search bar -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <script src="js/jquery-3.5.1.js"></script>
+
+        <title>TRVL</title>
+    </head>
+
+    <body>
+        <header>
+            <div class="navbar-fixed">
+                <nav class="grey darken-4">
+                    <!-- make the navbar responsive and push everything to the middle -->
+                    <div class="container">
+                        <div class="nav-wrapper">
+                            <a href="index.html" class="brand-logo">TRVL</a>
+                            <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                                <i class="material-icons">menu</i>
+                            </a>
+                            <!-- link to the sidenav menu, it targets the id mobile-nav -->
+                            <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                            </a>
+                            <!-- shows up only on large screens -->
+                            <!-- aligned to the right -->
+                            <ul class="right hide-on-med-and-down">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="login-form" style="padding-top:7%;">
+                <div class="container">
+                    <div class="valign-wrapper row login-box">
+                        <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4 grey lighten-4">
+                            <div class="card-content grey lighten-4">
+                                <span class="card-title">Login</span>
+                                <span class="red-text" style="font-size: 0.9em !important">Login page for TRVL agents only</span>
+                            </div>
+                            <div class="card-content" id="response">
+
+                            </div>
+                            <div class="card-content">
+                                <form class="col s12" id="login_form" action="" method="post">
+                                    <div class="input-field">
+                                        <i class="material-icons prefix black-text">account_circle</i>
+                                        <input id="email" type="email" name="email" required>
+                                        <label for="email">Email</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <i class="material-icons prefix black-text">lock</i>
+                                        <input id="password" type="password" name="password" class="validate">
+                                        <label for="password">Password</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <button id="login-btn" type="submit" name="login" class="btn waves-effect waves-light">Login</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="page-footer grey darken-4">
+            <div class="row">
+                <p class="copyright flow-text center white-text">Copyright &copy 2020 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+            </div>
+        </footer>
+
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                // function to set cookie
+                function setCookie(cname, cvalue, exdays) {
+                    var d = new Date();
+                    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                    var expires = "expires="+ d.toUTCString();
+                    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+                }
+
+                // remove any prompt messages
+                function clearResponse(){
+                    $('#response').html('');
+                }
+
+                // function to make form values to json format
+                $.fn.serializeObject = function(){
+                 
+                    var o = {};
+                    var a = this.serializeArray();
+                    $.each(a, function() {
+                        if (o[this.name] !== undefined) {
+                            if (!o[this.name].push) {
+                                o[this.name] = [o[this.name]];
+                            }
+                            o[this.name].push(this.value || '');
+                        } else {
+                            o[this.name] = this.value || '';
+                        }
+                    });
+                    return o;
+                };
+
+                // trigger when login form is submitted
+                $(document).on('submit', '#login_form', function(){
+                 
+                    // get form data
+                    var login_form=$(this);
+                    var form_data = JSON.stringify($('form').serializeObject());
+
+
+                    console.log(form_data);
+
+                    // submit form data to api
+                    $.ajax({
+                        url: "http://localhost/trvl/api/agent/login.php",
+                        type : "POST",
+                        contentType : 'application/json',
+                        data : form_data,
+                        success : function(result){
+                     
+                            // store jwt in cookie
+                            setCookie("jwt", result.jwt, 1);
+                            // store account name in cookie
+                            setCookie("account_name", result.account_name, 1);
+                            // set role
+                            setCookie("agent", 1, 1);
+                     
+                            // redirect to account home page
+                            showHomePage();
+                        },
+                        error: function(xhr, resp, text){
+                            
+                            // on error, tell the user login has failed & empty the input boxes
+                            $('#response').html("Login failed.");
+                            $('#response').css("color", "red");
+                            login_form.find('input').val('');
+                        }
+                    });
+                                 
+                    return false;
+                });
+        
+                // show user home page
+                function showHomePage(){
+                 
+                    // validate jwt to verify access
+                    var jwt = getCookie('jwt');
+                    $.post("http://localhost/trvl/api/JWT/validate_token.php", JSON.stringify({ jwt:jwt })).done(function(result) {
+                        window.location.replace("http://localhost/project/agent_home.html");
+                    })
+                 
+                    // show login page on error
+                    .fail(function(result) {
+                        window.location.replace("http://localhost/project/agent_login.html");
+                    });
+                }
+
+                // get or read cookie
+                // used to read the jwt from the cookie in order to verify it
+                function getCookie(cname){
+                    var name = cname + "=";
+                    var decodedCookie = decodeURIComponent(document.cookie);
+                    var ca = decodedCookie.split(';');
+                    for(var i = 0; i <ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' '){
+                            c = c.substring(1);
+                        }
+                 
+                        if (c.indexOf(name) == 0) {
+                            return c.substring(name.length, c.length);
+                        }
+                    }
+                    return "";
+                }
+            });
+        </script>
+    </body>
+</html>

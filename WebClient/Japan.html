@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!-- import offline material-icons -->
+        <link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+        <!-- import fontawesome -->
+        <link type="text/css"rel="stylesheet" href="css/all.css"/>
+        <!-- CSS file for the search bar -->
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <title>Japan Trips & Vacations</title>
+    </head>
+
+    <body>
+        <div class="navbar-fixed">
+            <nav class="grey darken-4">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="index.html" class="brand-logo">TRVL</a>
+                        <a href="#" data-target="mobile-nav" class="sidenav-trigger">
+                            <i class="material-icons">menu</i>
+                        </a>
+                        <a href="#" class="sidenav-trigger" data-target="mobile-nav">
+                        </a>
+                        <ul class="right hide-on-med-and-down">
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="#GALLERY">Gallery</a>
+                            </li>
+                            <li>
+                                <a href="#ABOUT">About</a>
+                            </li>
+                            <li>
+                                <a href="#CONTACT">Contact</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-trigger" href="#" data-target="dropdown1">Destinations<i class="material-icons right">arrow_drop_down</i></a>
+                            </li>
+                            <li>
+                                <a href="Inquire.html" class="btn grey darken-4 waves-effect waves-dark" id="inquire-btn">INQUIRE</a>
+                            </li>
+                            <li>
+                                <a href="login.html">Login</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <ul id='dropdown1' class='dropdown-content mega'>
+            <div class="row">
+                <div class="col m4">
+                    <li class="dest-group">Asia</li>
+                    <li class="divider"></li>
+                    <li><a href="Japan.html">Japan</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">India</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">China</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Russia</a></li>
+                </div>
+                <div class="col m4">
+                    <li class="dest-group">Europe</li>
+                    <li class="divider"></li>
+                    <li><a href="Italy.html">Italy</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Ireland</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">France</a></li>
+                </div>
+                <div class="col m4">
+                    <li class="dest-group">America</li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Canada</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Mexico</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#!">Bahamas</a></li>
+                </div>
+            </div>
+         </ul>
+
+         <ul class="sidenav" id="mobile-nav">
+             <li>
+                 <a class="sidenav-close" href="index.html">Home</a>
+             </li>
+             <li>
+                 <a class="sidenav-close" href="#GALLERY">Gallery</a>
+             </li>
+             <li>
+                 <a class="sidenav-close" href="#ABOUT">About</a>
+             </li>
+             <li>
+                 <a class="sidenav-close" href="#CONTACT">Contact</a>
+             </li>
+         </ul>
+
+
+         <section class="banner">
+            <!-- responsive img based on screen size -->
+             <picture>
+                <source media="(max-width:767px)" srcset="img/JapanBanner2.jpg">
+                <source media="(min-width:768px)" srcset="img/JapanBanner1.jpg">
+                <!-- in case source isn't supported, this img tag will be loaded instead -->
+                <img src="img/JapanBanner1.jpg" alt="Japan">
+            </picture>
+        </section>
+
+        <section class="section description grey lighten-5">
+            <div class="container">
+                <h3 class="center ">Japan Tours</h3>
+                <p class="center">
+                    Japan’s dichotomy of ancient culture and modern progress forms a web of cultural immersion unlike any other. Uncover the secrets
+                    of the samurai, indulge in the elegance of sashimi, and fill your imagination with images of looming peaks and colorful cherry
+                    blossoms - now available to you on an exclusive small group tour during the height of the bloom. Discover the allure of Japan through TRVL.
+                </p>
+            </div>
+        </section>
+
+        <section id="GALLERY" class="section gallery grey darken-4 white-text scrollspy">
+            <div class="container">
+                <h3 class="center">Gallery</h3>
+                <p class="white-text hide-on-med-and-down center">Photos from Our Japan tours this year</p>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery1.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Off the beaten track tour of Japan">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery2.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Cultural exploration of Japan">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery3.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Cultural exploration of Japan">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery4.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Heritage and tradition">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery5.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Heritage and tradition">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery6.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Heritage and tradition">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery7.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Highlighs of Nagasaki tour">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery8.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Highlighs of Nagasaki tour">
+                    </div>
+                    <div class="col s12 m4">
+                        <img src="img/JapanGallery9.jpg" alt="Japan" class="materialboxed responsive-img" data-caption="Highlighs of Nagasaki tour">
+                    </div>
+                </div>
+            </div>
+        </scetion>
+
+        <section id="ABOUT" class="section about grey lighten-5 scrollspy">
+            <div class="container">
+                <h3 class="center">About Japan</h3>
+                <ul class="collapsible white">
+                    <li class="active">
+                        <div class="collapsible-header">
+                            Japan At A Glance
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                Because Japan has always been dedicated to the unique, it’s fitting that the country has a dazzling group of volcanic islands
+                                forming its own culture in the Pacific. Nothing is copied. Whether it’s ancient Buddhist temples, ebullient fish markets, or
+                                neighborhoods flashing with neon, the country screams of originality at every turn. Almost every city street is an attraction,
+                                the ethereal concoction of sights and sounds providing endless entertainment. But contrast iconic cities with snow-capped Mount
+                                Fuji or white Okinawa beaches that make tropical postcards look dull. Even the forests are inimitable, flickering between immense
+                                stretches of green bamboo, coy carp filled rivers, and delightful blossoms. Like the classic Manga comic, you have an effervescent
+                                collection of stories to discover, each radiating a commitment to showcasing local culture.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            Unique Experiences
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem">Spring Cherry Blossom and Fall Colors</p>
+                                Seasonal changes bring new blankets of artistic brilliance to the whole of Japan. Opening cherry blossoms provide a spring covering
+                                of delight, and many city streets are briefly dominated by a captivating full bloom. Fast forward to after the fall season and a
+                                magical transformation brings a new palate of color with the country flickering through a kaleidoscopic blend of profound reds and
+                                fading oranges as the maple trees explode into life.
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem">Quaint Mountain Retreats and Famous Hot Springs</p>
+                                In rural Japan, taking a bath isn’t merely about getting clean. Naturally heated water fills outdoor tubs, the steam gently rising
+                                towards a landscape of jagged peaks and forests of pine, cedar, and bamboo. These traditional “onsens” - or hot springs - punctuate
+                                the mountain revelry, mingling with cute old-fashioned towns and shimmering Japanese gardens. With the irrefutably efficient local
+                                transportation, escaping from city lights to mountain solitude can take less than an hour.
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Rich Immersion in Buddhist Culture</p>
+                                Japan’s commitment to the original can be traced back to its spiritual leaders, a myriad of indigenous religions epitomizing the
+                                country’s hallowed harmony. It should come as no surprise that “zen” entered the English dictionary from Japanese Buddhism. Insights
+                                into ancient temples and beliefs are easily sprinkled into any Japan itinerary while intimate journeys can also delve into the heart
+                                of this spiritual heritage. The origins of Japanese mythology are revealed in destinations like Shimane and Kumano.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            WHEATHER AND WHEN TO GO
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                Japan changes dramatically through the seasons, from endless blankets of white snow to blooming cherry blossoms, tropical summer
+                                beaches to forest journeys across fallen leaves. Likewise, there are vast disparities between the northern mountains of Hokkaido
+                                and the Pacific Ocean tropics of Okinawa. The following seasons typically follow similar months as the US seasons:
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Spring</p>
+                                Despite the regular inclement rain, spring is one of the best seasons for visiting Japan. Cherry blossoms douse the streets in color,
+                                the temperatures are pleasant (mostly in the 60’s and low 70’s), and there’s an opportunity to explore all of Japan’s diversity. Snow
+                                 may just be clinging to the northern mountains while tropical beaches are more than hot enough.
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Summer</p>
+                                A humid summer is ushered in by June’s tsuyu (rainy season) bringing occasional typhoons and flash storms. It’s not overbearingly hot,
+                                although the climate has a distinctively tropical feel and sultry atmosphere. The mountains, however, aren’t as warm, so it’s a great
+                                place to cool off.
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Fall</p>
+                                After another shower of rain in September, fall is perhaps Japan’s most beautiful season. The forests explode with color and like
+                                spring, most of the country will be pleasant and easy to visit.
+                            </p>
+                            <p>
+                                <p class="center" style="font-weight: bold; margin-bottom: 0.5rem;">Winter</p>
+                                Winter varies across Japan, with the Pacific coastline delivering dry, clear days and the Sea of Japan bringing snow and cold winds.
+                                 Mountain retreats and ski conditions are magical this time of year. However, remember that winter brings significantly fewer hours of
+                                 daylight.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            WHERE TO STAY
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                Befitting Japan’s cultural juxtapositions, accommodation options range from the ultra-modern skyscraper suites to a wooden ryokan in
+                                the mountains. The cities are heavily business orientated, and there are thousands of modern hotels covering almost every district.
+                                All of the big international names are found here, but the less common Japanese ones can be equally luxuriant.<br><br>
+
+                                Far more traditional, a ryokan imbues a real sense of Japanese intimacy and authenticity. A stack of tatami mats is brought into
+                                minimalistic rooms when you want to sleep. Green tea and meals are served around low tables, and you’ll usually sit on cushions
+                                on the floor. They’re more common in rural destinations, although anywhere with an ancient heritage will feature a choice of
+                                ryokans. Most have elegant gardens fluttering with bird song, and opening the sliding doors reveals charming vistas. Note that
+                                it’s rare that ryokan rooms are en-suite. You’ll probably be bathing in the traditional style, having a hot bath and then
+                                getting wrapped up in a cotton kimono.<br><br>
+
+                                Japan features a myriad of unique choices, from capsule hotels to sleeping in Buddhist temples, and houses that blur the distinction
+                                 between guesthouse and homestay; trying it all out is part of the experience. Like everything in the country, expect impeccable
+                                 cleanliness and service.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            BEFORE YOU GO
+                        </div>
+                        <div class="collapsible-body">
+                            <p>
+                                Citizens of the U.S., Canada, and most EU countries do not need a visa for tourist visits up to 90 days. Technically, you may be
+                                required to prove that you’re visiting for non-remunerative activities. A copy of your travel itinerary is sufficient.<br><br>
+
+                                Japan has some very strict laws on what constitutes illegal pharmaceuticals. Many over the counter medications are prohibited,
+                                such as pseudoephedrines like Sudafed or Vicks inhalers. Even with a prescription, strong painkillers and things like EpiPens
+                                are likely to be confiscated by customs, and you could even end up being deported. This medication can be brought into Japan by
+                                applying for a Yakkan Shoumei, or import certificate that you then declare to customs.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+
+                <div class="center">
+                    <a href="Inquire.html" class="btn-large waves-effect waves-dark" id="planning-btn">start planning my trip</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="CONTACT" class="section section-contact grey darken-4 white-text scrollspy">
+            <div class="container">
+                <div class="row center">
+                    <div class="col s12">
+                        <a class="white-text" href="#">
+                            <i class="fab fa-twitter fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-instagram fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-facebook fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="#">
+                            <i class="fab fa-pinterest fa-4x"></i>
+                        </a>
+                        <a class="white-text" href="mailto:trvl@trvl.com">
+                            <i class="far fa-envelope fa-4x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12 m6">
+                        <h6 class="white-text">Subscribe to our newsletter</h6>
+                        <form class="newsletter" action="index.html" method="post">
+                            <div class="input-field">
+                                <input type="text" name="name" value="" placeholder="Your name" required>
+                                <input type="email" name="email" value="" placeholder="Your Email address" required>
+                                <button class="btn-small light-blue accent-3 waves-effect waves-light" type="submit" name="action">Subscribe
+                                    <i class="material-icons right">send</i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col s12 m6">
+                        <p class="copyright flow-text">Copyright &copy 2019 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+                        <p class="headquarters flow-text left">Headquarters: 1580 W. El Camino Real, Suite 14, Mountain View, CA 94040, USA
+                            Denver Branch: 1437 Larimer Street, Suite 200, Denver, CO 80202, USA
+                        </p>
+                        <p><span class="recruting flow-text">Are you a <em>top travel specialist?</em> </span>
+                        <a class="contact-section-link flow-text" href="#">Click here to contact us!</a></p>
+                        <a class="contact-section-link flow-text" href="#">Privacy Policy</a><br>
+                        <a class="contact-section-link flow-text" href="#">Terms Of Use</a><br>
+                        <a class="contact-section-link flow-text" href="#">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+         <script type="text/javascript" src="js/materialize.min.js"></script>
+         <script type="text/javascript">
+            const sideNav = document.querySelector('.sidenav');
+            M.Sidenav.init(sideNav, {});
+
+            // Mega dropdown
+             const dropdown = document.querySelectorAll('.dropdown-trigger');
+             M.Dropdown.init(dropdown, {
+                 coverTrigger: false,
+                 inDuration: 300,
+ 				outDuration: 150,
+             });
+
+             // MaterialBox gallery
+             const mbox = document.querySelectorAll('.materialboxed');
+             M.Materialbox.init(mbox, {});
+
+             const colap = document.querySelector('.collapsible');
+             M.Collapsible.init(colap, {});
+
+             var scroll = document.querySelectorAll('.scrollspy');
+             M.ScrollSpy.init(scroll, {});
+        </script>
+    </body>
+</html>

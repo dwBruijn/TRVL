@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<!-- import materialize.css-->
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+		<!-- import offline material-icons -->
+		<link type="text/css"rel="stylesheet" href="css/icons/material-icons.css"/>
+		<!-- import fontawesome -->
+		<link type="text/css"rel="stylesheet" href="css/all.css"/>
+		<!-- CSS file for the search bar -->
+		<link rel="stylesheet" href="css/main.css"/>
+		<!-- let browser know website is optimized for mobile-->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+		<script src="js/jquery-3.5.1.js"></script>
+
+		<title>TRVL</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="navbar-fixed">
+				<nav class="grey darken-4">
+					<!-- make the navbar responsive and push everything to the middle -->
+					<div class="container">
+						<div class="nav-wrapper">
+							<a href="index.html" class="brand-logo">TRVL</a>
+							<a href="#" data-target="mobile-nav" class="sidenav-trigger">
+								<i class="material-icons">menu</i>
+							</a>
+							<!-- link to the sidenav menu, it targets the id mobile-nav -->
+							<a href="#" class="sidenav-trigger" data-target="mobile-nav">
+							</a>
+							<!-- shows up only on large screens -->
+							<!-- aligned to the right -->
+							<ul class="right hide-on-med-and-down">
+								<li>
+									<!-- based on the account username -->
+									<a class="dropdown-trigger" href="#" id="account-name" data-target="dropdown1">agent_name<i class="material-icons right">arrow_drop_down</i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+
+			<!-- Account dropdown -->
+			<!-- must be updated -->
+			<ul id='dropdown1' class='dropdown-content'>
+				<li>
+					<a href="#" id="logout-trigger">Logout</a>
+				</li>
+			</ul>
+
+			<!-- sidenav list item targeted by the menu button in the navbar -->
+			<!-- must be updated -->
+			<ul class="sidenav" id="mobile-nav">
+				<li>
+					<a class="sidenav-close" href="#" id="logout-trigger">Logout</a>
+				</li>
+			</ul>
+		</header>
+
+		<main class="grey lighten-4">
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h5>Incoming Inquiries</h5>
+					</div>
+				</div>
+				<div id="inquiries">
+					<div>
+				</div>
+			</div>
+
+			<div class="modal modal-fixed-footer" id="mdl1">
+				<div class="modal-content">
+                    <h5>Inquiry Details</h5>
+                    <h6>Trip Details</h6>
+                    <ul class="collection">
+                        <li class="collection-item"><b>Destination: </b> 
+                        	<span id="country"></span>
+                        </li>
+                        <li class="collection-item"><b>Travel Date: </b>
+                        	<span id="travel-date"></span>
+                        </li>
+                        <li class="collection-item"><b>Trip Length (in weeks): </b>
+                        	<span id="trip-length"></span>
+                        </li>
+                        <li class="collection-item"><b>No. Of Travelers: </b>
+                        	<span id="number-of-persons"></span>
+                        </li>
+                    </ul>
+                    <h6>Trip Style</h6>
+                    <ul class="collection">
+                        <li class="collection-item"><b>Type Of Trip: </b>
+                        	<span id="type"></span>
+                        </li>
+                        <li class="collection-item"><b>Level of accommodation: </b>
+                        	<span id="level-of-accommodation"></span>
+                        </li>
+                        <li class="collection-item"><b>Number Of Hotel Rooms: </b>
+                        	<span id="number-of-hotel-rooms"></span>
+                        </li>
+                        <li class="collection-item"><b>Services Needed</b>
+                            <ul class="collection">
+                                <li class="collection-item"><b>Activities: </b> 
+                                	<span id="serv-activities"></span>
+                                </li>
+                                <li class="collection-item"><b>In-country Transportation: </b>
+                                	<span id="serv-incountry-transportation"></span>
+                                </li>
+                                <li class="collection-item"><b>International Flight: </b>
+                                	<span id="serv-interflights"></span>
+                                </li>
+                                <li class="collection-item"><b>Tour Guide: </b>
+                                	<span id="serv-tour-guide"></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="collection-item"><b>Requested Activities</b>
+                            <br>
+                            <span id="requested-activities"></span>
+                        </li>
+                    </ul>
+                    <h6>Budget Details</h6>
+                    <ul class="collection">
+                        <li class="collection-item"><b>Budget Per Person: $</b>
+                        	<span id="budget-per-person"></span>
+                        </li>
+                        <li class="collection-item"><b>International Flights included: </b>
+                        	<span id="budget-interflights"></span>
+                        </li>
+                        <li class="collection-item"><b>Budget Flexibility: </b>
+                        	<span id="budget-flexibility"></span>
+                        </li>
+                    </ul>
+                    <h6>Specific Requests</h6>
+                    <ul class="collection">
+                        <li class="collection-item"><b>Specific Requests</b>
+                            <br>
+                            <span id="specific-requests"></span>
+                        </li>
+                    </ul>
+                </div>
+				<div class="modal-footer">
+					<a href="#!" class="btn waves-effect waves-light modal-make-offer-btn modal-close">Close</a>
+				</div>
+			</div>
+
+			<form id="jwt-form" action="" method="POST">
+				<input type="hidden" id="jwt" name="jwt" value="">
+			</form>
+		</main>
+
+		<footer class="page-footer grey darken-4">
+			<div class="row">
+				<p class="copyright flow-text center white-text">Copyright &copy 2020 TRVL, Inc. All Rights Reserved. CST 2124858-50.</p>
+			</div>
+		</footer>
+
+		<script type="text/javascript" src="js/materialize.min.js"></script>
+		<script type="text/javascript">
+			// Init the sidenav
+			const sideNav = document.querySelector('.sidenav');
+			M.Sidenav.init(sideNav, {});
+			// Init dropdowns
+			const dropdown = document.querySelectorAll('.dropdown-trigger');
+			M.Dropdown.init(dropdown, {
+				coverTrigger: false,
+				inDuration: 300,
+				outDuration: 150,
+			});
+			// Init modal
+			const elemsModal = document.querySelectorAll(".modal");
+			M.Modal.init(elemsModal, {
+				dismissible: false
+			});
+
+			$(document).ready(function(){
+				// function to make form values to json format
+				$.fn.serializeObject = function(){
+				 
+					var o = {};
+					var a = this.serializeArray();
+					$.each(a, function() {
+						if (o[this.name] !== undefined) {
+							if (!o[this.name].push) {
+								o[this.name] = [o[this.name]];
+							}
+							o[this.name].push(this.value || '');
+						} else {
+							o[this.name] = this.value || '';
+						}
+					});
+					return o;
+				};
+
+				// get JWT value
+				var jwt = getCookie('jwt');
+				// get account_name
+				var account_name = getCookie("account_name");
+				document.getElementById("account-name").innerHTML = account_name;
+				// set JWT field in form to be send as JSON field
+				document.getElementById("jwt").value = jwt;
+
+				// get form data
+				var jwt_form = $(this);
+				var form_data = JSON.stringify($('form').serializeObject());
+				
+				console.log(form_data);
+
+				$.ajax({
+					url: "http://localhost/trvl/api/agent/get_inquiries.php",
+					type : "POST",
+					contentType : 'application/json',
+					data : form_data,
+					success : function(result){
+						var htmlData = ``;
+						var num_of_inquiries = Object.keys(result).length;
+						var inquiry_ids = Object.keys(result);
+						var count = 0;
+						// display 2 inquiries per row
+						for(var i = num_of_inquiries-1; i >= 0; i--) {
+							if(count % 2 == 0) {
+								htmlData += '</div><div class="row">';
+							}
+
+							htmlData += createInquiryCard(result[inquiry_ids[i]][0], result[inquiry_ids[i]][1], result[inquiry_ids[i]][2], inquiry_ids[i]);
+
+							count++;
+						}
+
+
+						document.getElementById("inquiries").innerHTML = htmlData;
+					},
+					error: function(resp){
+						// get error string from the returned JSON response
+						var error = JSON.parse(resp.responseText)['message'];
+						console.log(error);
+
+						window.location.replace("http://localhost/project/agent_login.html");
+
+					}
+				});  
+
+
+				// get or read cookie
+				// used to read the jwt from the cookie in order to verify it
+				function getCookie(cname){
+					var name = cname + "=";
+					var decodedCookie = decodeURIComponent(document.cookie);
+					var ca = decodedCookie.split(';');
+					for(var i = 0; i <ca.length; i++) {
+						var c = ca[i];
+						while (c.charAt(0) == ' '){
+							c = c.substring(1);
+						}
+				 
+						if (c.indexOf(name) == 0) {
+							return c.substring(name.length, c.length);
+						}
+					}
+					return "";
+				}
+
+				// function to delete cookie
+				function deleteCookie(cname, cvalue) {
+					var d = new Date();
+					d.setTime(d.getTime() - 999999999);
+					var expires = "expires="+ d.toUTCString();
+					document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+				}
+
+				// called when the dynamically loaded modal trigger is clicked
+				$('body').on('click', 'a.modal-trigger', function() {
+					console.log("clicked : " + $(this).attr('data-id'));
+
+					// makes a get request to the API and gets inquiry data
+					$.get("http://localhost/trvl/api/inquiry/read_inquiry.php?id="+$(this).attr('data-id'), function(data, status){
+						console.log(Object.keys(data));
+						if(status == "success") {
+							document.getElementById("country").innerHTML = data.country;
+							document.getElementById("travel-date").innerHTML = data.travel_date;
+							document.getElementById("trip-length").innerHTML = data.trip_length;
+							document.getElementById("number-of-persons").innerHTML = data.number_of_persons;
+							document.getElementById("level-of-accommodation").innerHTML = data.level_of_accommodation;
+							document.getElementById("type").innerHTML = data.type;
+							document.getElementById("number-of-hotel-rooms").innerHTML = data.number_of_hotel_rooms;
+							document.getElementById("serv-activities").innerHTML = data.serv_activities;
+							document.getElementById("serv-interflights").innerHTML = data.serv_interflights;
+							document.getElementById("serv-incountry-transportation").innerHTML = data.serv_incountry_transportation;
+							document.getElementById("serv-tour-guide").innerHTML = data.serv_tour_guide;
+							document.getElementById("requested-activities").innerHTML = data.requested_activities;
+							document.getElementById("budget-per-person").innerHTML = data.budget_per_person;
+							document.getElementById("budget-interflights").innerHTML = data.budget_inter_flights;
+							document.getElementById("budget-flexibility").innerHTML = data.budget_flexibility;
+							document.getElementById("specific-requests").innerHTML = data.specific_requests;
+						}
+					});
+				});
+
+				function createInquiryCard(user_name, date, status, inquiry_id) {
+					date = date.substring(0, 10);
+					var action1 = "Check Details";
+					var action2 = "Update Offer";
+					var action1Class = "";
+					var action2Class = "";
+					var link2 = "";
+
+					// conditions to set the state of the links based on inquiry status
+					if(status == "awaiting offer" || status == "offer received" || status == "offer accepted" || status == "awaiting updated offer" || status == "offer updated") {
+						action1 = "Check Details";
+						if(status == "offer received") {
+							action2Class = "disabled-link";
+						}
+						if(status == "awaiting offer") {
+							action2 = "Make Offer";
+							link2 = "http://localhost/project/agent_make_offer.html"
+						}
+						if(status == "awaiting updated offer") {
+							action2  = "Update Offer";
+							link2 = "http://localhost/project/agent_update_offer.html"
+						}
+						if(status == "offer accepted") {
+							action2Class = "disabled-link";
+						}
+						if(status == "offer updated") {
+							action2Class = "disabled-link";
+						}
+					}
+
+					// used to pass inquiry_id to make offer page
+					var queryString = "?id="
+					var card = `
+					<div class="col s12 m6">
+							<div class="card horizontal inquiry-card">
+								<form action="" method="POST">
+									<input type="hidden" name="inquiry_id" value="${inquiry_id}">
+								</form>
+								<div class="card-stacked">
+									<div class="card-content">
+										<p>Client: ${user_name}</p>
+										<p>Date: ${date}</p>
+										<p>Status: ${status}</p>
+									</div>
+									<div class="card-action">
+										<div class="row">
+											<div class="col s6">
+												<a data-id="${inquiry_id}" href="#mdl1" class="${action1Class} modal-trigger">${action1}</a>
+											</div>
+											<div class="col s6">
+												<a href="${link2}${queryString}${inquiry_id}" class="${action2Class}">${action2}</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					`;
+
+					return card;
+				}
+
+				// logout trigger callback function
+				$(document).on('click', '#logout-trigger', function(){
+					console.log("deleted jwt");
+				    deleteCookie("jwt", "");
+				    deleteCookie("account_name", "");
+				    deleteCookie("agent", "");
+				    window.location.replace("http://localhost/project/agent_login.html");
+				});
+
+				 
+			});
+		</script>
+	</body>
+</html>
