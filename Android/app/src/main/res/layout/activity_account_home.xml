@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:id="@+id/accountHomeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AccountHomeActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="@string/accountHomeInquiriesTextView"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="2dp"/>
+        <TextView
+            android:id="@+id/textViewInquiryActionResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:layout_gravity="center_horizontal"
+            android:text=""
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+</ScrollView>

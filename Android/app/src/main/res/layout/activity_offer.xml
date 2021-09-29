@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:fillViewport="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".OfferActivity"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="@string/textViewOfferDetails"
+            android:textColor="@color/grey"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Transportation"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/offerFlightType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="flight Type: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerFlightAccommodation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="flight Accommodation: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerTicketPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Ticket Price: $"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerGroundTranspPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Ground Transportation per person: $"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Lodging"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/offerHotelName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Hotel Name: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerHotelAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Hotel Address: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/OfferNumberOfHotelRooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Number Of Hotel Rooms: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerRoomPricePerNight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Room Price Per Night: $"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Tour Guide"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/offerTourGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Tour Guide: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerTourGuidePrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Tour Guide Price: $"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Activities"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/offerActivitiesDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Activities Details: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerActivitiesPricePerPerson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Activities Price Per Person: $"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp" />
+        <TextView
+            android:id="@+id/offerGeneralSuggestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="General Suggestions: "
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/offerTotalPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text="Total Trip Price: $"
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/checkOfferResponse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="verdana"
+            android:text=""
+            android:textColor="@color/grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/offerBtnAccept"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Accept offer"
+                android:layout_marginStart="8dp"
+                android:onClick="acceptOffer"/>
+            <Button
+                android:id="@+id/offerBtnDecline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request Changes"
+                android:layout_marginStart="8dp"
+                android:onClick="declineOffer"/>
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/requestedChanges"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:inputType="textMultiLine"
+            android:hint="Requested changes"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/offerBtnSubmitRequestedChanges"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="submitRequestedChanges"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+</ScrollView>
