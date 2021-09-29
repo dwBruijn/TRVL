@@ -6,3 +6,5 @@ The project follows the MVC design pattern.
 The RESTful API communicates with the DB and uses JSON to comunicate with both the Android app and the Web app.  
 JWT is used for authorization.  
 The Web app uses JQuery (AJAX) to communicate with the API and Materialize CSS for the design.
+  
+A Visual Paradigm project is also included, it contains the UML diagrams (use case, class, activity) for this platform.
